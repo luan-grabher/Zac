@@ -18,14 +18,14 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/' . __('notices'), function () {
         return "Noticias";
-    })->name('notices')->middleware('permission:browse_notices');
+    })->name('notices');
 
     Route::get('/' . __('tasks'), function () {
         return "Tarefas";
     })->name('tasks');
 
     Route::get('/' . __('robots'), function () {
-        return "Robos";
+        return "Robôs";
     })->name('robots');
 
     Route::get('/' . __('birthday_messages'), function () {

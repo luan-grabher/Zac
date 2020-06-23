@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            @php $card = ['route'=>'Robots']; @endphp
+            @php $card = ['route'=>'Robots', 'permission'=> 'read_robots']; @endphp
             @include('layouts.home-card-link')
 
             @php $card = ['route'=>'Tasks']; @endphp
