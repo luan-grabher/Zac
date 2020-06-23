@@ -7,10 +7,18 @@ Route::get('/', function () {
 Auth::routes();
 
 //Removido o registro para o usuário
-Route::redirect('/register','/login');
+Route::redirect('/register', '/login');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/' . __('notices'), function () {
+        return "Noticias";
+    })->name('notices')->middleware('permission:browse_notices');
 
     Route::get('/' . __('tasks'), function () {
         return "Tarefas";
@@ -20,10 +28,6 @@ Route::middleware(['auth'])->group(function () {
         return "Robos";
     })->name('robots');
 
-    Route::get('/' . __('notices'), function () {
-        return "Noticias";
-    })->name('notices');
-
     Route::get('/' . __('birthday_messages'), function () {
         return "Mensagens de Aniversário";
     })->name('birthday_messages');
@@ -31,8 +35,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/' . __('overtime_calendar'), function () {
         return "Calendário de Horas Extras";
     })->name('overtime_calendar');
-});
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
 });

@@ -55,7 +55,6 @@
             return false;
         });
 
-        updateSelects();
     });
 
     function ajax() {

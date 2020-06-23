@@ -12,7 +12,7 @@
             @php $card = ['route'=>'overtime_calendar']; @endphp
             @include('layouts.home-card-link')
 
-            @php $card = ['route'=>'Notices','blocked'=>true]; @endphp
+            @php $card = ['route'=>'Notices','permission'=>'browse_notices']; @endphp
             @include('layouts.home-card-link')
 
             @php $card = ['route'=>'birthday_messages','blocked'=>true]; @endphp
