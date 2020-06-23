@@ -108,9 +108,4 @@
         }
     }
 
-    /*Atualizar selects*/
-    function updateSelects() {
-        console.log("Essa função não faz nada, remova ela!");
-    }
-
 </script>
