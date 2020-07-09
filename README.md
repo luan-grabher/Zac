@@ -11,7 +11,7 @@ Para realizar a instalação siga os passos a seguir:
 * NPM
 * Banco de dados utilizado: MySql 5.7
 
-###Comandos
+###Instalação
 Para realizar a instalação execute os seguintes comandos na pasta do projeto:
 * composer install
 * npm install
