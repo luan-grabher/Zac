@@ -20,9 +20,11 @@ Route::middleware(['auth'])->group(function () {
         return "Noticias";
     })->name('notices');
 
-    Route::get('/' . __('tasks'), function () {
-        return "Tarefas";
-    })->name('tasks');
+    Route::group(['prefix' => __('tasks')], function () {
+        Route::get('/', 'TaskController@index')->name('tasks');
+        Route::get(__('add'), 'TaskController@add')->name('tasks_add');
+        Route::post(__('add'), 'TaskController@addPost')->name('tasks_add');
+    });
 
     Route::get('/' . __('robots'), function () {
         return "Robôs";

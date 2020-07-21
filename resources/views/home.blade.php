@@ -6,7 +6,7 @@
             @php $card = ['route'=>'Robots', 'permission'=> 'read_robots']; @endphp
             @include('layouts.home-card-link')
 
-            @php $card = ['route'=>'Tasks']; @endphp
+            @php $card = ['route'=>'Tasks', 'permission' => 'browse_tasks']; @endphp
             @include('layouts.home-card-link')
 
             @php $card = ['route'=>'overtime_calendar']; @endphp
