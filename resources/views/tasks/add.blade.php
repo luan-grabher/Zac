@@ -10,7 +10,7 @@
         <form class="m-2" method="post">
             @include('layouts.alerts')
 
-            {{csrf_field()}}
+            @csrf
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputName">Nome</label>
@@ -46,20 +46,19 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-3">
                     <label for="inputReference">Referência (AAAAMM Ex: 202001) </label>
                     <input type="number" class="form-control bg-dark border-secondary text-light" id="inputReference"
                            name="reference" max="300000">
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-3">
                     <label for="inputDeadline">Prazo</label>
                     <input type="date" class="form-control bg-dark border-secondary text-light" id="inputDeadline"
                            name="deadline"></input>
                 </div>
-
-                <div class="form-group col-9">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
                     <label for="inputDescription">Descrição</label>
                     <textarea class="form-control bg-dark border-secondary text-light" id="inputDescription"
                               name="description" rows="5"></textarea>

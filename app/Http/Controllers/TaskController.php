@@ -69,6 +69,6 @@ class TaskController extends Controller
         $task->reference = $req->reference;
         $task->save();
 
-        return redirect()->back()->with('message', 'Funcionou!');;
+        return redirect()->back()->with('message', 'Tarefa ' . $task->name . ' criada para ' . User::find($task->user)->name . '!');;
     }
 }

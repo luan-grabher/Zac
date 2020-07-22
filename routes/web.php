@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
 });
 
 Auth::routes();
@@ -14,6 +14,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/' . __('notices'), function () {

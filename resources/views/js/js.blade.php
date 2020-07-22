@@ -55,7 +55,14 @@
             return false;
         });
 
+        //Deleta Scripts auto destruiveis
+        //$(".auto-destroy").remove();
     });
+
+    function resizeIframe(obj) {
+        var objHeight = obj.contentWindow.document.documentElement.scrollHeight;
+        obj.style.height = objHeight + 'px';
+    }
 
     function ajax() {
         this.method = "POST";
