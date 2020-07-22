@@ -3,23 +3,49 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            @php $card = ['route'=>'Robots', 'permission'=> 'read_robots']; @endphp
-            @include('layouts.home-card-link')
+            @component('layouts.home-card-link')
+                @slot('route') robots @endslot
+                @slot('permission') read_robots @endslot
+                @slot('icon') robots @endslot
+                @slot('name') Robôs @endslot
+            @endcomponent
 
-            @php $card = ['route'=>'Tasks', 'permission' => 'browse_tasks']; @endphp
-            @include('layouts.home-card-link')
+            @component('layouts.home-card-link')
+                @slot('route') tasks @endslot
+                @slot('permission') browse_tasks @endslot
+                @slot('icon') tasks @endslot
+                @slot('name') Tarefas @endslot
+            @endcomponent
 
-            @php $card = ['route'=>'overtime_calendar']; @endphp
-            @include('layouts.home-card-link')
+            @component('layouts.home-card-link')
+                @slot('route') voyager.dashboard @endslot
+                @slot('permission') browse_admin @endslot
+                @slot('icon') admin @endslot
+                @slot('name') {{__('Admin')}} @endslot
+            @endcomponent
 
-            @php $card = ['route'=>'Notices','permission'=>'browse_notices']; @endphp
-            @include('layouts.home-card-link')
 
-            @php $card = ['route'=>'birthday_messages','blocked'=>true]; @endphp
-            @include('layouts.home-card-link')
+            @component('layouts.home-card-link')
+                @slot('route') notices @endslot
+                @slot('permission') browse_notices @endslot
+                @slot('icon') notices @endslot
+                @slot('name') {{__('Notices')}} @endslot
+            @endcomponent
 
-            @php $card = ['route'=>'admin','blocked'=>true]; @endphp
-            @include('layouts.home-card-link')
+            @component('layouts.home-card-link')
+                @slot('route') overtime_calendar @endslot
+                @slot('permission') browse_overtime_calendar @endslot
+                @slot('icon') overtime_calendar @endslot
+                @slot('name') {{__('overtime_calendar')}} @endslot
+            @endcomponent
+
+            @component('layouts.home-card-link')
+                @slot('route') birthday_messages @endslot
+                @slot('permission') browse_birthday_messages @endslot
+                @slot('icon') birthday_messages @endslot
+                @slot('name') {{__('birthday_messages')}} @endslot
+            @endcomponent
+
         </div>
     </div>
 @endsection

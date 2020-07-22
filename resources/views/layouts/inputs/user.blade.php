@@ -4,12 +4,12 @@
     <div class="col-md-6">
         <div class="input-group">
             <input id="user" type="text"
-                   class="form-control @error('email') is-invalid @enderror" name="user"
+                   class="form-control border-0 bg-light @error('email') is-invalid @enderror" name="user"
                    value="{{ old('user') }}" required autofocus
                    onchange='$("#email").val($("#user").val() + "@"+ "{{env('MAIL_DOMAIN')}}")'
             >
-            <div class="input-group-append">
-                <label class="input-group-text">@
+            <div class="input-group-append border-primary">
+                <label class="input-group-text bg-dark text-light border-secondary">@
                     <fakeSpace>{{env('MAIL_DOMAIN')}}</label>
             </div>
         </div>

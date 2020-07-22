@@ -66,7 +66,7 @@
             </div>
             <hr class="border-secondary">
             <div class="text-center">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Criar</button>
+                <button type="submit" class="btn btn-success"><i class="fas fa-plus-circle"></i> Criar</button>
             </div>
         </form>
     </div>

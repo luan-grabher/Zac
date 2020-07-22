@@ -1,11 +1,11 @@
-@if(isset($card['route']) && isset($card['permission']))
-    @if(Auth::user()->hasPermission($card['permission']))
+@if(isset($route) && isset($permission) && isset($icon) && isset($name))
+    @if(Auth::user()->hasPermission($permission))
         <div class="col-md-2 rounded shadow-lg px-0 m-2">
-            <a href="{{route(strtolower($card['route']))}}" class="text-center">
-                <img src="{{asset('images/icons/'.$card['route'].'.png')}}" class="bg-light w-100 p-3">
+            <a href="{{route(strtolower($route))}}" class="text-center">
+                <img src="{{asset('images/icons/'.$icon.'.png')}}" class="bg-light w-100 p-3">
 
                 <div class="card-body font-weight-bold" style="font-size:1.5vw;">
-                    {{__($card['route'])}}
+                    {{$name}}
                 </div>
             </a>
         </div>

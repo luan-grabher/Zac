@@ -25,6 +25,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', 'TaskController@index')->name('tasks');
         Route::get(__('add'), 'TaskController@add')->name('tasks_add');
         Route::post(__('add'), 'TaskController@addPost')->name('tasks_add');
+        Route::get(__('filter'), 'TasksFilterController@index')->name('tasks_filter');
+        Route::post(__('filter'), 'TasksFilterController@store')->name('tasks_filter');
+        Route::get(__('view'), 'TaskController@view')->name('tasks_view');
     });
 
     Route::get('/' . __('robots'), function () {

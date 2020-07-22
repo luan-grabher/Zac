@@ -6,8 +6,10 @@ use App\Enterprise;
 use App\Priority;
 use App\StatusTask;
 use App\Task;
+use App\TasksFilter;
 use App\User;
 use Illuminate\Http\Request;
+use PHPUnit\Util\Filter;
 
 class TaskController extends Controller
 {
@@ -48,7 +50,7 @@ class TaskController extends Controller
         return view('tasks.add',['users'=>$users,'enterprises'=>$enterprises,'priorities'=>$priorities]);
     }
 
-    public function addPost(Request $req){
+    public function store(Request $req){
         $req->validate([
             'name' => 'required|max:200',
             'description' => 'nullable',
@@ -70,5 +72,34 @@ class TaskController extends Controller
         $task->save();
 
         return redirect()->back()->with('message', 'Tarefa ' . $task->name . ' criada para ' . User::find($task->user)->name . '!');;
+    }
+
+    public function view(){
+            //Get filter
+            $filter = TasksFilter::where('owner',Auth::id())->first();
+
+            //Construct Where
+            $where = [];
+            if(!is_null($filter)){
+                if($filter->user !== 0)
+                    $where[] = ['user',$filter->user];
+                if($filter->enterprise !== 0)
+                    $where[] = ['enterprise',$filter->enterprise];
+                if($filter->group !== 0)
+                    $where[] = ['group',$filter->group];
+                if($filter->status !== 0)
+                    $where[] = ['status',$filter->status];
+                if($filter->order !== 0)
+                    $where[] = ['order',$filter->order];
+                if($filter->key_word !== 0)
+                    $where[] = ['name','like','%'. $filter->key_word .'%'];
+                /*
+                 * Add filter key word to filter in name or description,
+                 * */
+            }
+
+            $tasks = Task::where($where)->get();
+
+            //return View with $tasks;
     }
 }
