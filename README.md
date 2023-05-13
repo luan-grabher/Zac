@@ -1,24 +1,18 @@
-#ZAC WEB
-Este programa serve de modo geral para gerenciar o tempo das tarefas feitas na empresa e os robôs desenvolvidos.
+# GestorTask
+Um sistema ERP para gerenciamento de tarefas, medição o tempo exigido nas tarefas de cada empresa cliente, solicitação de execução de robôs, acompanhamento da folha de pagamento das empresas clientes.
 
-##Instalação
+## Instalação
+
 Para realizar a instalação siga os passos a seguir:
 
-###Requerimentos
 * PHP 7.4^
 * Composer
 * Laravel
-* NPM
+* Node
 * Banco de dados utilizado: MySql 5.7
 
-###Instalação
+### Instalação
 Para realizar a instalação execute os seguintes comandos na pasta do projeto:
 * composer install
 * npm install
 * php artisan migrate
-
-##Arquitetura dos arquivos
-Esta seção descreve como é o funcionamento dos arquivos.
-
-###JavaScript
-A maioria dos arquivos javascript estão dentro de elementos **script** em arquivos blade, para que seja possível utilizar funções blade.
