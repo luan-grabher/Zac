@@ -1,5 +1,5 @@
 # GestorTask
-Um sistema ERP para gerenciamento de tarefas, medição o tempo exigido nas tarefas de cada empresa cliente, solicitação de execução de robôs, acompanhamento da folha de pagamento das empresas clientes.
+Um sistema ERP para gerenciamento de tarefas, medição do tempo exigido nas tarefas de cada empresa cliente, solicitação de execução de robôs, acompanhamento da folha de pagamento das empresas clientes.
 
 ## Instalação
 
